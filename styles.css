@@ -1,0 +1,67 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* styles.css */
+
+/* Применяем стили к каждому элементу с классом video-container */
+.video-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+  transform: scale(1.03);
+}
+
+/* Создаем псевдоэлемент ::before для каждого .video-container */
+.video-container::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%; /* делаем блок квадратным */
+}
+
+/* Применяем стили к изображению внутри каждого .video-container */
+.video-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* обрезаем изображение до размеров контейнера */
+  object-position: center; /* выравниваем изображение по центру */
+  border-radius: 10px;
+}
+
+
+
+.video-container:hover {
+  transform: scale(1.03);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* делаем блок квадратным */
+  display: block;
+  border-radius: 10px;
+  object-fit: cover; /* обрезаем изображение до размеров контейнера */
+  object-position: center; /* выравниваем изображение по центру */
+}
+  
